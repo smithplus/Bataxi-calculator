@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    /* Fondo gris claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.app-title {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.card {
+    background: #ffffff;
+    /* Fondo blanco para las cards */
+    border-radius: 12px;
+    /* Bordes redondeados de 12px */
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    border: 1px solid #e0e0e0;
+    /* Borde sutil */
+}
+
+h1,
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    /* Centrar los títulos */
+}
+
+h1 {
+    font-size: 24px;
+    /* Tamaño más pequeño para la hora */
+}
+
+p,
+label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    outline: none;
+    font-size: 16px;
+}
+
+input[type="number"]:focus {
+    border-color: #007bff;
+    /* Color al enfocarse */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo del contenedor del switch */
+.switch-toast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff2cf;
+    /* Color de fondo tipo toast */
+    border-radius: 12px;
+    /* Bordes redondeados */
+    padding: 10px 15px;
+    /* Espaciado interno */
+    box-shadow: 0 0px 0x rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    margin-bottom: 15px;
+    /* Separación con otros elementos */
+    border: 1px solid #FFDB58;
+    /* Added border */
+}
+
+/* ... rest of your style.css code ... */
+.switch-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo del switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    /* Tamaño reducido */
+    height: 20px;
+    /* Tamaño reducido */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+    /* Bordes redondeados del slider */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    /* Tamaño reducido */
+    width: 16px;
+    /* Tamaño reducido */
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #007bff;
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+    /* Ajuste para el tamaño reducido */
+}

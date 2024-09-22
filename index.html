@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tarifas de Taxi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Contenedor del logo y título -->
+        <div class="logo-container">
+            <img src="https://play-lh.googleusercontent.com/EgMrlrWHJGZiFQUYI22xyoCnGFjbmiQHpwUkGtCkT1kNYqCxr0KeTPbBcfCIIgQCi2_M=w480-h960" alt="BA Taxi Logo" class="logo">
+            <h1 class="app-title">BA Taxi Calculator</h1>
+        </div>
+
+        <div class="card" id="info">
+            <h1 id="currentTime"></h1>
+            <div class="switch-toast">
+                <span class="switch-label">Modo Offline</span>
+                <label class="switch">
+                    <input type="checkbox" id="fetchMode" onclick="toggleFetchMode()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <p>Tarifa de inicio: <span id="startFare"></span></p>
+            <p>Tarifa por cada 200 metros: <span id="farePer200m"></span></p>
+            <p>Tipo de tarifa: <span id="fareType"></span></p>
+        </div>
+
+        <div class="card" id="inputCard">
+            <h2>Calcular costo del viaje</h2>
+            <label for="distance">Ingrese la distancia a recorrer (km):</label>
+            <input type="number" id="distance" placeholder="Distancia en km" min="0" step="0.01">
+        </div>
+
+        <div class="card" id="result">
+            <h2>Resultado</h2>
+            <p>Costo inicial del viaje: <span id="initialCost"></span></p>
+            <p>Costo total por distancia: <span id="totalDistanceCost"></span></p>
+            <p>Costo total del viaje: <span id="totalFare"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
