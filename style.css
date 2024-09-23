@@ -6,12 +6,36 @@
 }
 
 body {
-    background-color: #fafafa; /* Fondo gris claro */
+    background-color: #fafafa;
+    /* Fondo gris claro */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+}
+
+.mode-switch-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    /* Borde sutil */
+}
+
+.mode-switch {
+    display: flex;
+    align-items: center;
+}
+
+.switch-icon {
+    font-size: 20px;
 }
 
 .container {
@@ -39,24 +63,30 @@ body {
 }
 
 .card {
-    background: #ffffff; /* Fondo blanco para las cards */
-    border-radius: 12px; /* Bordes redondeados de 12px */
+    background: #ffffff;
+    /* Fondo blanco para las cards */
+    border-radius: 12px;
+    /* Bordes redondeados de 12px */
     padding: 20px;
     margin: 15px 0;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    border: 1px solid #e0e0e0; /* Borde sutil */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    border: 1px solid #e0e0e0;
+    /* Borde sutil */
 }
 
 .card-title {
     font-size: 18px;
     color: #333;
     margin-bottom: 10px;
-    text-align: center; /* Centrar los títulos */
+    text-align: center;
+    /* Centrar los títulos */
 }
 
 hr {
     border: none;
-    border-top: 1px solid #e0e0e0; /* Línea sutil entre título y contenido */
+    border-top: 1px solid #e0e0e0;
+    /* Línea sutil entre título y contenido */
     margin-bottom: 20px;
 }
 
@@ -64,31 +94,36 @@ h1,
 h2 {
     color: #333;
     margin-bottom: 10px;
-    text-align: center; /* Centrar los títulos */
+    text-align: center;
+    /* Centrar los títulos */
 }
 
 h1 {
-    font-size: 22px; /* Tamaño más pequeño para la hora */
+    font-size: 22px;
+    /* Tamaño más pequeño para la hora */
 }
 
 p,
 label {
     margin-bottom: 5px;
+    margin-top: 5px;
     color: #555;
 }
 
-input[type="number"] {
+input[type="text"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: 8px;
+    /* Bordes redondeados */
     outline: none;
     font-size: 16px;
 }
 
-input[type="number"]:focus {
-    border-color: #007bff; /* Color al enfocarse */
+input[type="text"]:focus {
+    border-color: #007bff;
+    /* Color al enfocarse */
 }
 
 button {
@@ -97,7 +132,8 @@ button {
     background-color: #007bff;
     color: #ffffff;
     border: none;
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: 8px;
+    /* Bordes redondeados */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
@@ -107,31 +143,14 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Estilo del contenedor del switch */
-.switch-toast {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff2cf; /* Color de fondo tipo toast */
-    border-radius: 12px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interno */
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    margin-bottom: 15px; /* Separación con otros elementos */
-    border: 1px solid #FFDB58; /* Borde amarillo */
-}
-
-.switch-label {
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
-}
-
 /* Estilo del switch */
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px; /* Tamaño reducido */
-    height: 20px; /* Tamaño reducido */
+    width: 40px;
+    /* Tamaño reducido */
+    height: 20px;
+    /* Tamaño reducido */
 }
 
 .switch input {
@@ -149,14 +168,17 @@ button:hover {
     bottom: 0;
     background-color: #ccc;
     transition: 0.4s;
-    border-radius: 20px; /* Bordes redondeados del slider */
+    border-radius: 20px;
+    /* Bordes redondeados del slider */
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 16px; /* Tamaño reducido */
-    width: 16px; /* Tamaño reducido */
+    height: 16px;
+    /* Tamaño reducido */
+    width: 16px;
+    /* Tamaño reducido */
     left: 2px;
     bottom: 2px;
     background-color: white;
@@ -164,10 +186,31 @@ button:hover {
     border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #007bff;
 }
 
-input:checked + .slider:before {
-    transform: translateX(20px); /* Ajuste para el tamaño reducido */
+input:checked+.slider:before {
+    transform: translateX(20px);
+    /* Ajuste para el tamaño reducido */
+}
+
+/* Estilo del toast para el resultado */
+.result-toast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffeb51;
+    /* Color de fondo tipo toast */
+    border-radius: 12px;
+    /* Bordes redondeados */
+    padding: 10px 15px;
+    /* Espaciado interno */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    margin-top: 15px;
+    /* Separación con otros elementos */
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
 }

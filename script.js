@@ -6,12 +6,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Añadir evento de input para calcular en vivo
     document.getElementById('distance').addEventListener('input', calculateFare);
+
+    // Validar el input para permitir solo números y punto decimal, y evitar coma
+    document.getElementById('distance').addEventListener('input', (event) => {
+        const inputValue = event.target.value;
+        const caretPosition = event.target.selectionStart; // Posición del cursor
+        const newValue = inputValue.replace(/[^0-9.]/g, ''); // Permitir solo números y puntos decimales
+
+        // Si se modifica el valor, ajustar la posición del cursor
+        if (inputValue !== newValue) {
+            event.target.value = newValue;
+            event.target.setSelectionRange(caretPosition - 1, caretPosition - 1);
+        }
+    });
+
+    // Evitar que se puedan escribir comas en el input
+    document.getElementById('distance').addEventListener('keydown', (event) => {
+        if (event.key === ',') {
+            event.preventDefault(); // Prevenir entrada de comas
+        }
+    });
 });
 
 function updateCurrentTime() {
-    const currentTime = new Date();
-    const formattedTime = currentTime.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
-    document.getElementById('currentTime').textContent = `Hora actual: ${formattedTime}`;
+    const currentTimeElement = document.getElementById('currentTime');
+    if (currentTimeElement) {
+        const currentTime = new Date();
+        const formattedTime = currentTime.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
+        currentTimeElement.textContent = formattedTime;
+    }
 }
 
 function initializeRates() {

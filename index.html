@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Switch de modo Offline en un contenedor con ícono -->
+    <div class="mode-switch-container">
+        <div class="mode-switch">
+            <span class="switch-icon">🌐</span>
+            <label class="switch">
+                <input type="checkbox" id="fetchMode" onclick="toggleFetchMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Contenedor del logo y título -->
         <div class="logo-container">
@@ -14,35 +25,34 @@
             <h1 class="app-title">BA Taxi Calculator</h1>
         </div>
 
-        <div class="card" id="info">
-            <h2 class="card-title">Información</h2>
-            <hr>
-            <p id="currentTime"></p>
-            <div class="switch-toast">
-                <span class="switch-label">Modo Online</span>
-                <label class="switch">
-                    <input type="checkbox" id="fetchMode" onclick="toggleFetchMode()">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <p>Tarifa de inicio: <span id="startFare"></span></p>
-            <p>Tarifa por cada 200 metros: <span id="farePer200m"></span></p>
-            <p>Tipo de tarifa: <span id="fareType"></span></p>
-        </div>
-
+        <!-- Card de Input -->
         <div class="card" id="inputCard">
             <h2 class="card-title">Calcular costo del viaje</h2>
             <hr>
             <label for="distance">Ingrese la distancia a recorrer (km):</label>
-            <input type="number" id="distance" placeholder="Distancia en km" min="0" step="0.01">
+            <input type="text" id="distance" placeholder="Distancia en km" min="0" step="0.01">
         </div>
 
+        <!-- Card de Resultado -->
         <div class="card" id="result">
-            <h2 class="card-title">Resultado</h2>
+            <h2 class="card-title">Resultado del Cálculo</h2>
             <hr>
-            <p>Costo inicial del viaje: <span id="initialCost"></span></p>
-            <p>Costo total por distancia: <span id="totalDistanceCost"></span></p>
-            <p>Costo total del viaje: <span id="totalFare"></span></p>
+            <p>Costo tarifa de inicio: <span id="initialCost">$0.00</span></p>
+            <p>Costo tarifa por cada 200 metros: <span id="totalDistanceCost">$0.00</span></p>
+            <div class="result-toast">
+                <span>Costo Total del viaje:</span>
+                <span id="totalFare">$0.00</span>
+            </div>
+        </div>
+
+        <!-- Card de Información de Tarifas -->
+        <div class="card" id="info">
+            <h2 class="card-title">Información de Tarifas</h2>
+            <hr>
+            <p>Hora actual: <span id="currentTime"></span></p>
+            <p>Tarifa de inicio: <span id="startFare">$1280.00</span></p>
+            <p>Tarifa por cada 200 metros: <span id="farePer200m">$128.00</span></p>
+            <p>Tipo de tarifa: <span id="fareType">Día</span></p>
         </div>
     </div>
 
