@@ -202,11 +202,12 @@ input:checked+.slider:before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffeb51;
+    background-color: #fefcdd;
+    border: 1px solid #f7ce46;
     /* Color de fondo tipo toast */
     border-radius: 12px;
     /* Bordes redondeados */
-    padding: 10px 15px;
+    padding: 16px 16px;
     /* Espaciado interno */
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
     /* Sombra sutil */
