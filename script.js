@@ -90,12 +90,20 @@ function calculateFare() {
     // Cálculo de costos
     const totalMeters = distance * 1000; // Convertir kilómetros a metros
     const numberOf200m = Math.ceil(totalMeters / 200); // Número de tramos de 200 metros
-    const totalDistanceCost = numberOf200m * farePer200m; // Costo total por distancia
+    let totalDistanceCost = numberOf200m * farePer200m; // Costo total por distancia
 
-    const totalFare = startFare + totalDistanceCost; // Costo total del viaje
+    // Verificar si es tarifa nocturna (entre las 22:00 y las 6:00)
+    const currentHour = new Date().getHours();
+    let finalStartFare = startFare;
+    if (currentHour >= 22 || currentHour < 6) {
+        finalStartFare *= 1.2; // Incremento del 20% en la tarifa inicial
+        totalDistanceCost *= 1.2; // Incremento del 20% en la tarifa por distancia
+    }
+
+    const totalFare = finalStartFare + totalDistanceCost; // Costo total del viaje
 
     // Mostrar resultados
-    document.getElementById('initialCost').textContent = `$${startFare.toFixed(2)}`;
+    document.getElementById('initialCost').textContent = `$${finalStartFare.toFixed(2)}`;
     document.getElementById('totalDistanceCost').textContent = `$${totalDistanceCost.toFixed(2)}`;
     document.getElementById('totalFare').textContent = `$${totalFare.toFixed(2)}`;
 }
