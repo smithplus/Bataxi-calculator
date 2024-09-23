@@ -15,7 +15,9 @@
         </div>
 
         <div class="card" id="info">
-            <h1 id="currentTime"></h1>
+            <h2 class="card-title">Información</h2>
+            <hr>
+            <p id="currentTime"></p>
             <div class="switch-toast">
                 <span class="switch-label">Modo Online</span>
                 <label class="switch">
@@ -29,13 +31,15 @@
         </div>
 
         <div class="card" id="inputCard">
-            <h2>Calcular costo del viaje</h2>
+            <h2 class="card-title">Calcular costo del viaje</h2>
+            <hr>
             <label for="distance">Ingrese la distancia a recorrer (km):</label>
             <input type="number" id="distance" placeholder="Distancia en km" min="0" step="0.01">
         </div>
 
         <div class="card" id="result">
-            <h2>Resultado</h2>
+            <h2 class="card-title">Resultado</h2>
+            <hr>
             <p>Costo inicial del viaje: <span id="initialCost"></span></p>
             <p>Costo total por distancia: <span id="totalDistanceCost"></span></p>
             <p>Costo total del viaje: <span id="totalFare"></span></p>

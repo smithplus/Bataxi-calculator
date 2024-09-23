@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function updateCurrentTime() {
     const currentTime = new Date();
-    const formattedTime = currentTime.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    const formattedTime = currentTime.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
     document.getElementById('currentTime').textContent = `Hora actual: ${formattedTime}`;
 }
 
